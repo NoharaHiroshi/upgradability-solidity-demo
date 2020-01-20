@@ -146,9 +146,9 @@
  
 
 ## 智能合约框架
-* 模块框架
+**模块框架**
 
-      
+   ![pic_1](https://github.com/NoharaHiroshi/upgradability-solidity-demo/blob/master/readmePic/pic_1.png)
 
 　　1、 用户调用入口合约函数。
 
@@ -162,14 +162,9 @@
 
  
 
-* 整体框架
+**整体框架**
 
-　　
- 
-
-　　
-
-
+　　![pic_2](https://github.com/NoharaHiroshi/upgradability-solidity-demo/blob/master/readmePic/pic_2.png)
 
  
 
