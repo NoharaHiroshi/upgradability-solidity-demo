@@ -190,3 +190,56 @@
 　　b) 合约的可读性大幅下降，用户无法简单的读取合约的逻辑。
 
 　　c) 键值对的存储合约操作复杂。
+
+
+
+## 可升级智能合约DEMO
+
+　　当前DEMO实现了客户注册，通过管理员审核后，实名转账获得ERC-20代币的业务场景。**注意，当前DEMO只是为了阐述可升级的智能合约设计模式，不保证不存在漏洞。**
+    
+　　合约框架结构
+
+    - contract
+       |-- account                          // 客户模块，包含入口合约、逻辑合约、存储合约
+           |--  Account.sol                 // 客户入口合约
+           |--  AccountDelegate.sol         // 客户逻辑合约
+           |--  AccountStorage.sol          // 客户存储合约
+           |--  IAccountDelegate.sol        // 客户逻辑合约接口
+           |--  StorageStateful.sol         // 公共存储地址
+       |-- common                           // 公共合约
+           |--  Proxy.sol                   // 代理合约 
+           |--  KeyValueStorage.sol         // 全局存储合约
+       |-- interface                        // 公共接口
+           |--  IOwnable.sol                // 所有权接口 
+       |-- libraries                        // 库合约
+           |--  Util.sol                    // 工具库
+       |-- test                             // 测试
+           |--  AccountTestDelegate.sol     // 客户合约测试
+       |-- token                            // 代币
+           |--  erc20.sol                   // erc20
+       |-- zeppelin-solidity/contracts      // 第三方合约      
+       
+　　部署
+    
+　　使用Remixd将contract映射到Remix编辑器中，然后部署
+
+　　1）KeyValueStorage.sol
+    
+　　部署账户地址将作为系统管理员地址。 然后再通过系统管理员账户部署客户入口合约
+    
+　　2）Account.sol
+    
+　　部署成功后，系统管理员账户部署客户逻辑合约
+    
+　　3）AccountDelegate.sol
+    
+　　部署成功后，管理员身份调用Account.sol的initialize()方法，传入KeyValueStorage.sol合约地址，AcconutDelegate.sol合约地址作为参数，Account模块部署完成，然后部署
+    
+　　4）AccountTestDelegate.sol
+    
+　　供后续测试使用。最后任意账户部署erc20.sol，初始化时，除了传入token信息外，还需要传入KeyValueStorage.sol合约地址作为参数。
+    
+　　部署完成，顺序如下图。
+    
+　　![pic_3](https://github.com/NoharaHiroshi/upgradability-solidity-demo/blob/master/readmePic/pic_3.png)
+    
