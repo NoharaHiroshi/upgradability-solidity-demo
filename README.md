@@ -1,5 +1,17 @@
 # 可升级的以太坊智能合约设计模式
 
+
+**目录**
+
+* [可升级的以太坊智能合约设计模式](#%E5%8F%AF%E5%8D%87%E7%BA%A7%E7%9A%84%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
+  * [智能合约的现状](#%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E7%9A%84%E7%8E%B0%E7%8A%B6)
+  * [智能合约的局限](#%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E7%9A%84%E5%B1%80%E9%99%90)
+  * [智能合约目前的发展方向](#%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E7%9B%AE%E5%89%8D%E7%9A%84%E5%8F%91%E5%B1%95%E6%96%B9%E5%90%91)
+  * [如何利用智能合约实现复杂的业务场景](#%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%9E%E7%8E%B0%E5%A4%8D%E6%9D%82%E7%9A%84%E4%B8%9A%E5%8A%A1%E5%9C%BA%E6%99%AF)
+  * [智能合约设计模式的技术点](#%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%8A%80%E6%9C%AF%E7%82%B9)
+  * [智能合约设计模式](#%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
+  * [智能合约设计模式的优缺点](#%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9)
+  * [可升级智能合约DEMO](#%E5%8F%AF%E5%8D%87%E7%BA%A7%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6demo)
 　　
 
 
@@ -145,8 +157,8 @@
 
  
 
-## 智能合约框架
-**模块框架**
+## 智能合约设计模式
+**模块设计模式**
 
    ![pic_1](https://github.com/NoharaHiroshi/upgradability-solidity-demo/blob/master/readmePic/pic_1.png)
 
@@ -162,7 +174,7 @@
 
  
 
-**整体框架**
+**整体框架设计模式**
 
 　　![pic_2](https://github.com/NoharaHiroshi/upgradability-solidity-demo/blob/master/readmePic/pic_2.png)
 
