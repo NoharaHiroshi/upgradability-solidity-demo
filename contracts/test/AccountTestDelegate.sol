@@ -6,7 +6,7 @@ contract AccountTestDelegate{
 	
 	IAccountDelegate public ac;
 	
-	function setRm(IAccountDelegate _ac) external {
+	function setAc(IAccountDelegate _ac) external {
 	    ac = _ac;
 	}
 	

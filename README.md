@@ -191,7 +191,14 @@
 
 　　c) 键值对的存储合约操作复杂。
 
+ 
 
+　　
+
+
+ 
+
+ 
 
 ## 可升级智能合约DEMO
 
@@ -219,7 +226,7 @@
            |--  erc20.sol                   // erc20
        |-- zeppelin-solidity/contracts      // 第三方合约      
        
-　　部署
+　　**部署**
     
 　　使用Remixd将contract映射到Remix编辑器中，然后部署
 
@@ -242,4 +249,44 @@
 　　部署完成，顺序如下图。
     
 　　![pic_3](https://github.com/NoharaHiroshi/upgradability-solidity-demo/blob/master/readmePic/pic_3.png)
+
+　　**测试**
+
+　　一、注册客户
+    
+　　利用之前部署好的AccountTestDelegate.sol注册客户。首先，先调用setAc()方法传入Account.sol合约地址。如下图。
+
+　　![pic_4](https://github.com/NoharaHiroshi/upgradability-solidity-demo/blob/master/readmePic/pic_4.png)
+
+　　再调用rgister()方法注册客户，调用search()方法查询刚注册的客户。如下图
+    
+　　![pic_5](https://github.com/NoharaHiroshi/upgradability-solidity-demo/blob/master/readmePic/pic_5.png)
+
+　　注册成功。
+
+　　二、转移Token
+    
+　　利用erc20.sol的transfer()方法转移Token，传入刚刚注册的客户名，转移Token数量作为参数。提示当前客户未通过认证。如下图。
+    
+　　![pic_6](https://github.com/NoharaHiroshi/upgradability-solidity-demo/blob/master/readmePic/pic_6.png)    
+
+　　利用合约进行测试时，msg.sender为当前合约地址，如想完整测试转移token功能，请利用web3j连接合约进行测试。
+    
+　　三、升级合约
+    
+　　通过升级逻辑合约AccountDelegate.sol来升级客户合约的功能。首先，部署新的逻辑合约AccountDelegate.sol。部署成功后，在Account.sol合约中，利用upgradeTo()方法，传入版本号、新的逻辑合约地址作为参数来升级合约可实现的功能。如下图。
+    
+　　![pic_7](https://github.com/NoharaHiroshi/upgradability-solidity-demo/blob/master/readmePic/pic_7.png)    
+ 
+
+　　
+
+
+ 
+
+ 
+
+
+　　**欢迎留言交流**
+    
     
